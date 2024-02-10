@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "binnacle"
+version = "0.1.0"
+description = ""
+authors = ["Markus Gierlinger <markus.gierlinger@dynatrace.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+typer = "^0.9.0"
+kubernetes = "^27.2.0"
+loguru = "^0.7.0"
+pydantic = "^2.1.1"
+plum-dispatch = "^2.1"
+tabulate = "^0.9.0"
+fastapi = "^0.101.0"
+uvicorn = "^0.20.0"
+networkx = "^3.1"
+strenum = "^0.4.9"
+matplotlib = "^3.7.0"
+pydot = "^1.4.2"
+diagrams = "^0.23.3"
+pydantic-settings = "^2.0.2"
+typing-extensions = "^4.7.1"
+typedb-driver = "^2.24.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+black = "^23.7.0"
+pre-commit = "^3.0.3"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+erdantic = "^0.6.0"
+httpx = "^0.24.1"
+
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+# section is used by tox.ini
+[tool.poetry.extras]
+test = ["pytest"]
+
+[tool.mypy]
+plugins = [
+  "pydantic.mypy"
+]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+
+[tool.ruff]
+ignore = ["F811"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning:typedb.*:"
+]
+
+[tool.poetry.scripts]
+binnacle = "binnacle.cli:app"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
