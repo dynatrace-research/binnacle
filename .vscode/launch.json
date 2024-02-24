@@ -1,0 +1,52 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "API",
+      "type": "python",
+      "request": "launch",
+      "program": "binnacle/cli.py",
+      "args": ["--debug", "serve"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Populate KB",
+      "type": "python",
+      "request": "launch",
+      "program": "binnacle/cli.py",
+      "args": ["--debug", "populate", "--db-name", "binnacle-db", "--infra"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Generate Testcases",
+      "type": "python",
+      "request": "launch",
+      "program": "binnacle/cli.py",
+      "args": ["--debug", "generate-topology-testsuite", "--output", "./dist"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Draw Domain Model",
+      "type": "python",
+      "request": "launch",
+      "program": "binnacle/cli.py",
+      "args": ["create-domain-diagram", "-d", "docs"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

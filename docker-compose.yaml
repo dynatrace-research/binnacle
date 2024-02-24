@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  binnacle:
+    build:
+      dockerfile: ./Dockerfile
+    image: binnacle
+    ports:
+      - 8000:8000
+    environment:
+      - DB_HOST=kb
+      - DB_NAME=cluster
+      - TIMEOUT=600 # timeout for Rest API calls
+      - LOGURU_LEVEL=INFO
+    depends_on:
+      - kb
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # necessary to access kind cluster
+  kb:
+    image: vaticle/typedb:2.18.0
+    ports:
+      - 1729:1729
