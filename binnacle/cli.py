@@ -1,12 +1,8 @@
 import multiprocessing as mp
 import sys
-from collections import defaultdict
-from enum import Enum, auto
-from queue import Queue
-from typing import Optional
+from enum import auto
 
 import typer
-import yaml
 from loguru import logger
 from strenum import UppercaseStrEnum
 

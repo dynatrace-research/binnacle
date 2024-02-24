@@ -104,10 +104,10 @@ class Ingress(NamespacedObject):
 
 class NetworkRelation(Relation):
     source: Annotated[
-        MicroService | Pod | ClusterNode | Service | Ingress | Internet, None, FieldConfig.Required, RelationPart.Source
+        MicroService | Pod | ClusterNode | Service | Ingress, None, FieldConfig.Required, RelationPart.Source
     ] = None
     destination: Annotated[
-        MicroService | Pod | ClusterNode | Service | Ingress | Internet, None, FieldConfig.Required, RelationPart.Target
+        MicroService | Pod | ClusterNode | Service | Ingress, None, FieldConfig.Required, RelationPart.Target
     ] = None
 
 
