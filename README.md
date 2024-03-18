@@ -96,7 +96,7 @@ stateDiagram
 
 
 
-## 🫶 Contribution
+## 🫶 Contributing
 
 Want to contribute? Awesome!    
 We are interested to see what problems you (want to) solve with a Kubernetes knowledge graph.
