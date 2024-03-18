@@ -8,15 +8,20 @@ The backend database is [TypeDB](https://vaticle.com/typedb).
 Binnacle connects to a specified kubernetes cluster and loads information about all its resources (accessible with the provided `kubectl` context).
 These resources are then migrated to a knowledge base, which has implicit rules to infer additional knowledge and relations of the target Kubernetes cluster.
 
-Supported capabilities:
+Once loaded, the cluster can be analyzed either using regular TypeQL queries or by building upon Binnacle to solve more sophisticated problems.
 
-- the usage secrets used by pods are modeled as explicit relations.
-- capabilities provided via RBAC rules are related to one of the following subjects `ServiceAccount`, `Group` and `User`.
+
+
+## Requirements
+
+Currently, Binnacle loads the data directly from a Kubernetes cluster targeted by [kubectl](https://kubernetes.io/docs/reference/kubectl/).
+To access the necessary data RBAC read permissions like `get` and/or `list` are required for most of the resources.
+For more sophisticated analysis, this also includes `Nodes`, `Secrets`, `NetworkPolicies`, etc..
 
 
 ## Installation
 
-Install all dependencies using the command `poetry install`
+Install all dependencies using the command `poetry install`.
 
 ### Context
 
@@ -87,23 +92,18 @@ stateDiagram
 | Add Project    | `binnacle populate`                                | PUT /projects           |
 | Delete Project | `typedb console --comand="database delete <name>"` | DELETE /projects/<name> |
 
-### Settings
-
----
-
-## Use-Cases
-
-Prerequisite: the database has been populated with the objects from the target cluster (see above).
-
-_A description of use-cases will follow ..._
 
 
-## 🏛️ Architecture
 
-Either entrypoint interacts with the `Service` component, which manages any interaction with Binnacle.
 
-The domain knowledge is modeled in the `Domain Model` component, which includes the supported entities and any rules for the inference.
+## 🫶 Contribution
 
-The information is persisted in a dedicated repository _(currently only TypeDB is supported!)_, which is abstracted in the `Adapters` component.
+Want to contribute? Awesome!    
+We are interested to see what problems you (want to) solve with a Kubernetes knowledge graph.
+All types of contributions are welcome: ideas, fixes, bug reports, and feedback of any kind.
 
-![](docs/diagrams/container_view.png)
+- See the contributing guide [here](./doc/CONTRIBUTING.md).
+- Check out the [Development Guide](./docs/DEVELOPER-GUIDE.md) for more information.
+- By contributing you agree to abide by the [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
+- If you're still unsure, feel free to reach out to us directly!
+
