@@ -103,7 +103,7 @@ We are interested to see what problems you (want to) solve with a Kubernetes kno
 All types of contributions are welcome: ideas, fixes, bug reports, and feedback of any kind.
 
 - See the contributing guide [here](./doc/CONTRIBUTING.md).
-- Check out the [Development Guide](./docs/DEVELOPER-GUIDE.md) for more information.
-- By contributing you agree to abide by the [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
+- Check out the [Development Guide](./doc/DEVELOPER-GUIDE.md) for more information.
+- By contributing you agree to abide by the [Code of Conduct](./doc/CODE_OF_CONDUCT.md).
 - If you're still unsure, feel free to reach out to us directly!
 
