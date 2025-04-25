@@ -14,7 +14,7 @@ pydantic = "^2.6.4"
 plum-dispatch = "^2.1"
 tabulate = "^0.9.0"
 fastapi = "^0.115.0"
-uvicorn = "^0.29.0"
+uvicorn = "^0.34.0"
 networkx = "^3.2.1"
 strenum = "^0.4.15"
 matplotlib = "^3.8.3"
@@ -31,7 +31,7 @@ pre-commit = "^3.0.3"
 isort = "^5.12.0"
 flake8 = "^6.0.0"
 erdantic = "^0.6.0"
-httpx = "^0.24.1"
+httpx = "^0.28.0"
 
 
 [tool.black]
